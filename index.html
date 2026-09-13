@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#0f1115" />
+  <title>DESARMALO — Desarmá. Armá. Superate.</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>" />
+</head>
+<body>
+  <div id="app">
+    <!-- PANTALLA INICIAL -->
+    <section id="screen-menu" class="screen active">
+      <div class="menu-content">
+        <div class="logo">DESARMALO</div>
+        <p class="tagline">Desarmá. Armá. Superate.</p>
+        <div class="record-box" id="menu-record">
+          🏆 Mejor: <span id="best-time">—</span>
+        </div>
+
+        <div class="mode-selector">
+          <button id="btn-play" class="btn btn-primary btn-large mode-btn active" data-mode="normal">
+            JUGAR
+          </button>
+          <button id="btn-blind" class="btn btn-secondary btn-large mode-btn" data-mode="blind">
+            👁️ A CIEGAS
+          </button>
+        </div>
+
+        <p class="hint" id="menu-hint">Tocá dos veces una pieza para rotarla</p>
+        <div class="stats-mini" id="menu-stats"></div>
+      </div>
+    </section>
+
+    <!-- PANTALLA JUEGO -->
+    <section id="screen-game" class="screen">
+      <header class="game-header">
+        <div class="object-name" id="object-name">BICICLETA</div>
+        <div class="timer" id="timer">⏱️ 30.0</div>
+        <div class="pieces-count" id="pieces-count">0/0</div>
+      </header>
+
+      <div id="stage" class="stage">
+        <!-- El objeto y las piezas se inyectan aquí -->
+      </div>
+
+      <div class="game-footer">
+        <div id="blind-countdown" class="blind-countdown" style="display:none;"></div>
+        <button id="btn-disassemble" class="btn btn-accent" style="display:none;">DESARMAR</button>
+      </div>
+    </section>
+
+    <!-- PANTALLA RESULTADO -->
+    <section id="screen-result" class="screen">
+      <div class="result-content">
+        <div id="result-title" class="result-title">¡ARMADO!</div>
+        <div id="result-object" class="result-object">BICICLETA</div>
+        <div class="result-stats">
+          <div class="stat">
+            <span class="label">Tiempo</span>
+            <span class="value" id="result-time">12.42 s</span>
+          </div>
+          <div class="stat">
+            <span class="label">Errores</span>
+            <span class="value" id="result-errors">1</span>
+          </div>
+          <div class="stat">
+            <span class="label">Puntos</span>
+            <span class="value" id="result-score">1850</span>
+          </div>
+        </div>
+        <div id="result-record" class="result-record">🏆 Récord: 11.83 s</div>
+        <div id="result-streak" class="result-streak"></div>
+        <div class="result-actions">
+          <button id="btn-share" class="btn btn-secondary">COMPARTIR</button>
+          <button id="btn-next" class="btn btn-primary btn-large">OTRO</button>
+        </div>
+        <button id="btn-retry" class="btn btn-ghost" style="display:none;">INTENTAR DE NUEVO</button>
+        <button id="btn-menu" class="btn btn-ghost">MENÚ</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/objects.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/scoring.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/share.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
